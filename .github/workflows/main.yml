@@ -1,4 +1,4 @@
-name: Build LIFE App and Deploy on Firebase
+name: Build LIFE App and Test
 on:
   push:
     branches:
