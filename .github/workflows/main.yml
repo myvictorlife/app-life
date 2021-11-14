@@ -2,7 +2,10 @@ name: Build LIFE App and Deploy on Firebase
 on:
   push:
     branches:
+      - refactor
       - fix
+      - feat
+      - chore
 
 jobs:
   build:
