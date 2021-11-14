@@ -8,6 +8,7 @@
 ##### Now go! Start your journey in search of your best version now.
 
 My Custom Life
+
 Building Knowledge
 
 - ✨Magic ✨
@@ -15,11 +16,10 @@ Building Knowledge
 
 ## Installation
 
-LIFE requires [Node.js](https://nodejs.org/) v14.15.0+ to run.
-
 Install the dependencies and devDependencies and start the server.
 
-
+[Node.js](https://nodejs.org/) v14.15.0+ to run.
+[IONIC](https://ionicframework.com/docs/intro/cli) v6.18.1 to run.
 
 #### Start project
 
@@ -31,6 +31,6 @@ You will also see any lint errors in the console.
 
 ## Running the project
 
-    $ yarn install
-    $ yarn start
+    $ npm install
+    $ npm start
     
