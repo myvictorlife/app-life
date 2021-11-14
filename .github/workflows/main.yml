@@ -3,9 +3,7 @@ on:
   push:
     branches:
       - refactor
-      - fix
-      - feat
-      - chore
+      - main
 
 jobs:
   build:
