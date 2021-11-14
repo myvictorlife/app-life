@@ -1,18 +1,12 @@
-image: ghcr.io/ionic-team/ionic-cli:6.11.11
+- name: Use coturiv/setup-ionic
+  uses: coturiv/setup-ionic@v1
+  with:
+    java-version: 8
+- name: Use coturiv/setup-ionic
+  uses: coturiv/setup-ionic@v1
+  with:
+    cordova-version: 8
 
-stages:
-  - test
-  - build
-
-test:
-  stage: test
-  script:
-    - npm ci
-    - npm run test
-
-test:
-  stage: test
-  script:
-    - npm ci
-    - npm run test
-
+- name: Build
+  run: |
+    ionic cordova build android --prod
