@@ -2,7 +2,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
+    "paths": {
+      "@life-store": ["app/core/store/index.ts"],
+      "@life-store/*": ["app/core/store/*"]
+    },
     "outDir": "./dist/life",
     "sourceMap": true,
     "declaration": false,

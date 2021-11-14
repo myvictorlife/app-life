@@ -16,5 +16,10 @@
   <div id="container">
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <p>User: {{ getUser() | async | json }}</p>
+    <p>Language: {{ getLanguage() | async }}</p>
+    <ion-button (click)="setLanguage('pt')" color="primary">Set to Portuguese(pt)</ion-button><br/>
+    <ion-button (click)="setLanguage('en')" color="warning">Set to English(en)</ion-button><br/>
+    <ion-button (click)="addUser()" color="warning">Set User</ion-button><br/>
   </div>
 </ion-content>

@@ -1,4 +1,4 @@
-name: Build LIFE App and Test
+name: Build App and Test
 on:
   push:
     branches:
