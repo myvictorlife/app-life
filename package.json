@@ -10,8 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:ios" : "ionic capacitor prepare ios",
-    "build:android" : "ionic capacitor prepare android"
+    "build:ios": "ionic capacitor prepare ios",
+    "build:android": "ionic capacitor prepare android"
   },
   "private": true,
   "dependencies": {
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@angular-builders/jest": "^13.0.0",
+    "@angular-devkit/architect": "^0.1300.2",
     "@angular-devkit/build-angular": "~12.1.1",
     "@angular-eslint/builder": "~12.0.0",
     "@angular-eslint/eslint-plugin": "~12.0.0",
