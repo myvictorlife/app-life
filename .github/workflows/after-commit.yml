@@ -1,0 +1,22 @@
+name: Build App and Test
+on:
+  push:
+    branches:
+      - refactor
+      - main
+
+jobs:
+  build:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Run Lint
+        run: npm run lint
+      - name: Run Tests
+        run: npm run test
