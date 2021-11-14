@@ -20,9 +20,9 @@ export const metaReducers: MetaReducer<State>[] = !environment.production ? [] :
 export const selectFeature = (state: State) => state.user;
 export const selectUser = createSelector(
     selectFeature,
-    (state: fromUser.State) => state.currentUser
+    (state: fromUser.State) => state?.currentUser
 );
 export const selectLanguage = createSelector(
     selectFeature,
-    (state: fromUser.State) => state.currentLang
+    (state: fromUser.State) => state?.currentLang
 );

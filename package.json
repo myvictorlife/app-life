@@ -8,6 +8,8 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "test:watch": "jest --watch",
+    "test:ci": "jest --runInBand",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:ios": "ionic capacitor prepare ios",
@@ -16,7 +18,7 @@
   "private": true,
   "dependencies": {
     "@angular/common": "~12.1.1",
-    "@angular/core": "~12.1.1",
+    "@angular/core": "~12.1.5",
     "@angular/forms": "~12.1.1",
     "@angular/platform-browser": "~12.1.1",
     "@angular/platform-browser-dynamic": "~12.1.1",
@@ -29,27 +31,26 @@
     "@capacitor/keyboard": "^1.1.3",
     "@capacitor/status-bar": "^1.0.6",
     "@ionic/angular": "^5.5.2",
-    "@ngneat/spectator": "^8.3.1",
     "@ngrx/store": "^12.5.1",
     "@ngrx/store-devtools": "^12.5.1",
     "rxjs": "~6.6.0",
-    "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-builders/jest": "^13.0.0",
-    "@angular-devkit/build-angular": "~12.1.1",
+    "@angular-devkit/build-angular": "^12.1.1",
     "@angular-eslint/builder": "12.6.1",
     "@angular-eslint/eslint-plugin": "12.6.1",
     "@angular-eslint/eslint-plugin-template": "12.6.1",
-    "@angular-eslint/schematics": "12.6.1",
     "@angular-eslint/template-parser": "12.6.1",
-    "@angular/cli": "~12.1.1",
+    "@angular/cli": "^12.1.5",
     "@angular/compiler": "~12.1.1",
     "@angular/compiler-cli": "~12.1.1",
     "@angular/language-service": "~12.0.1",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.16.0",
     "@capacitor/cli": "3.3.1",
-    "@ionic/angular-toolkit": "^5.0.3",
+    "@ionic/angular-toolkit": "^5.0.0",
     "@types/jest": "^27.0.2",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "4.28.2",
@@ -64,8 +65,24 @@
     "protractor": "~7.0.0",
     "ts-jest": "^27.0.7",
     "ts-node": "~8.3.0",
-    "typescript": "~4.2.4",
-    "webpack": "^5.64.0"
+    "typescript": "~4.2.4"
   },
-  "description": "An Ionic project"
+  "description": "LIFE project",
+  "jest": {
+    "preset": "jest-preset-angular",
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "setupFilesAfterEnv": [
+      "./src/jest.config.js"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!@ngrx|@ionic-native|@ionic!@life-store)"
+    ],
+    "moduleNameMapper": {
+      "@life-store": "<rootDir>/src/app/core/store/index.ts",
+      "@life-store/(.*)": "<rootDir>/src/app/app/core/store/*",
+      "config/lang": "<rootDir>/src/config/lang"
+    }
+  }
 }

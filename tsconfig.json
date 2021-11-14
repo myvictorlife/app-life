@@ -7,7 +7,7 @@
       "@life-store": ["app/core/store/index.ts"],
       "@life-store/*": ["app/core/store/*"]
     },
-    "outDir": "./dist/life",
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,

@@ -3,7 +3,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "allowJs": true,
-    "outDir": "./dist/life",
+    "outDir": "../out-tsc/spec",
+    "module": "commonjs",
+    "target": "es5",
     "types": [
       "jest", "node"
     ]
@@ -15,5 +17,8 @@
   "include": [
     "src/**/*.spec.ts",
     "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

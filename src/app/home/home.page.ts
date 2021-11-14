@@ -23,7 +23,7 @@ export class HomePage {
     return this.store.select(fromRoot.selectLanguage);
   }
 
-  addUser(language: string) {
+  addUser() {
     console.log('addUser on the Store');
     const user = {
       firstName: 'Victor Cesar',
