@@ -1,7 +1,7 @@
 # LIFE - IONIC 5 NGRX JEST
 ## Expanda o seu conhecimento!
 
-[![N|Solid](https://res.cloudinary.com/doiz6iue3/image/upload/c_thumb,w_200,g_face/v1636886664/Captura_de_Tela_2021-11-14_a%CC%80s_11.44.14_kclcly.png)](https://ionicframework.com/) [![N|Solid](https://res.cloudinary.com/doiz6iue3/image/upload/c_thumb,w_200,g_face/v1636886877/Captura_de_Tela_2021-11-14_a%CC%80s_11.47.22_joprcm.png)](https://ngrx.io/) [![N|Solid](https://res.cloudinary.com/doiz6iue3/image/upload/c_thumb,w_200,g_face/v1636887036/Captura_de_Tela_2021-11-14_a%CC%80s_11.50.22_zalslv.png)](https://github.com/ngneat/spectator)
+[![N|Solid](https://res.cloudinary.com/doiz6iue3/image/upload/c_thumb,w_200,g_face/v1636886664/Captura_de_Tela_2021-11-14_a%CC%80s_11.44.14_kclcly.png)](https://ionicframework.com/) [![N|Solid](https://res.cloudinary.com/doiz6iue3/image/upload/c_thumb,w_200,g_face/v1636886877/Captura_de_Tela_2021-11-14_a%CC%80s_11.47.22_joprcm.png)](https://ngrx.io/) 
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
