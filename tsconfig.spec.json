@@ -2,13 +2,14 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./LIFE/spec",
+    "allowJs": true,
+    "outDir": "./dist/life",
     "types": [
-      "jasmine"
+      "jest", "node"
     ]
   },
   "files": [
-    "src/test.ts",
+    "src/test-setup.ts",
     "src/polyfills.ts"
   ],
   "include": [

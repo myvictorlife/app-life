@@ -3,7 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/LIFE",
+    "outDir": "./dist/life",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
