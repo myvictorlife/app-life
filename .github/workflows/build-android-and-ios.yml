@@ -1,0 +1,18 @@
+image: ghcr.io/ionic-team/ionic-cli:6.11.11
+
+stages:
+  - test
+  - build
+
+test:
+  stage: test
+  script:
+    - npm ci
+    - npm run test
+
+test:
+  stage: test
+  script:
+    - npm ci
+    - npm run test
+
