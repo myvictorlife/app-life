@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { User } from '@life-store/user/user.model';
 import * as fromRoot from '@life-store';
