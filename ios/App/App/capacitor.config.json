@@ -1,0 +1,6 @@
+{
+	"appId": "com.life.mycustomlife",
+	"appName": "LIFE",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
