@@ -9,7 +9,7 @@ describe('UserActions', () => {
     });
     it('should load an action', () => {
         const user = { firstName: 'Victor Cesar', lastName: 'PB', email: 'life@my-custom-life.com'} as User;
-        const action = set({ user });
+        const action = setUser({ user });
         expect(action).toEqual({ type: '[USER] Set User', user });
     });
 
