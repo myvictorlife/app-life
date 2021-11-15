@@ -7,7 +7,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:ci": "jest --runInBand",
     "lint": "ng lint",
@@ -18,13 +19,13 @@
   "private": true,
   "dependencies": {
     "@angular/common": "~12.1.1",
+    "@angular/compiler": "~12.1.1",
+    "@angular/compiler-cli": "~12.1.1",
     "@angular/core": "~12.1.5",
     "@angular/forms": "~12.1.1",
     "@angular/platform-browser": "~12.1.1",
     "@angular/platform-browser-dynamic": "~12.1.1",
     "@angular/router": "~12.1.1",
-    "@angular/compiler": "~12.1.1",
-    "@angular/compiler-cli": "~12.1.1",
     "@capacitor/android": "3.3.1",
     "@capacitor/app": "^1.0.6",
     "@capacitor/core": "3.3.1",
@@ -62,6 +63,7 @@
     "eslint-plugin-jsdoc": "30.7.6",
     "eslint-plugin-ngrx": "^1.0.0",
     "eslint-plugin-prefer-arrow": "1.2.2",
+    "jasmine-marbles": "^0.8.4",
     "jest": "^27.3.1",
     "jest-preset-angular": "^11.0.0-rc.1",
     "protractor": "~7.0.0",
@@ -76,11 +78,16 @@
       "<rootDir>/src"
     ],
     "setupFilesAfterEnv": [
-      "./src/jest.config.js"
+      "<rootDir>/src/jest.config.js"
     ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!@ngrx|@ionic-native|@ionic!@life-store)"
-    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
     "moduleNameMapper": {
       "@life-store": "<rootDir>/src/app/core/store/index.ts",
       "@life-store/(.*)": "<rootDir>/src/app/app/core/store/*",
