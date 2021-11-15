@@ -1,6 +1,5 @@
 
-import { Action, createAction, props, State } from '@ngrx/store';
-import { LANG } from 'config/lang';
+import { createAction, props } from '@ngrx/store';
 import { User } from './user.model';
 
 export const load = createAction('[USER] Load');

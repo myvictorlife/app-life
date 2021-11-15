@@ -1,4 +1,5 @@
 const esModules = ['@ionic', '@ionic-native'].join('|');
+import 'jest-preset-angular/setup-jest';
 
 module.exports = {
   globals: {
@@ -14,5 +15,6 @@ module.exports = {
       }
     }
   },
-  transformIgnorePatterns: [`<rootDir>/node_modules/(?!${esModules})`]
+  transformIgnorePatterns: [`<rootDir>/node_modules/(?!${esModules})`],
+  collectCoverageFrom: ["**/*.{js,jsx}", "!**/node_modules/**", "!**/vendor/**"]
 };

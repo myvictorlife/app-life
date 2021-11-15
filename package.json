@@ -7,7 +7,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:ci": "jest --runInBand",
     "lint": "ng lint",
@@ -76,11 +77,16 @@
       "<rootDir>/src"
     ],
     "setupFilesAfterEnv": [
-      "./src/jest.config.js"
+      "<rootDir>/src/jest.config.js"
     ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!@ngrx|@ionic-native|@ionic!@life-store)"
-    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    },
     "moduleNameMapper": {
       "@life-store": "<rootDir>/src/app/core/store/index.ts",
       "@life-store/(.*)": "<rootDir>/src/app/app/core/store/*",
