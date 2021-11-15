@@ -30,7 +30,7 @@ export class HomePage {
       lastName: 'Peixoto Barbosa',
       email: 'victorcmggg@gmail.com'
     } as User;
-    this.store.dispatch(fromUserActions.set({user}));
+    this.store.dispatch(fromUserActions.setUser({user}));
   }
 
   setLanguage(language: string) {

@@ -3,7 +3,7 @@ import { createAction, props } from '@ngrx/store';
 import { User } from './user.model';
 
 export const load = createAction('[USER] Load');
-export const set = createAction(
+export const setUser = createAction(
     '[USER] Set User',
     props<{ user: User }>()
 );
