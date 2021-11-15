@@ -1,4 +1,4 @@
-import { changeLang, load, loadSuccess, set } from "./user.actions";
+import { changeLang, load, loadSuccess, setUser } from './user.actions';
 import { User } from './user.model';
 
 
