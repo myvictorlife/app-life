@@ -98,5 +98,11 @@
       "@life-store(.*)": "<rootDir>/src/app/app/core/store/*",
       "config/lang": "<rootDir>/src/config/lang"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "ng lint && ng test",
+      "pre-push": "ng build --aot true"
+    }
   }
 }
