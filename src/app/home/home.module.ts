@@ -18,11 +18,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     IonicModule,
     HomePageRoutingModule,
     StoreModule.forRoot(reducers, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
-      },
+      metaReducers
     }),
     !environment.production ? StoreDevtoolsModule.instrument({  maxAge: 10   }) : [],
     CoreModule

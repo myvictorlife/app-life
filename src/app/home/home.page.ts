@@ -3,7 +3,8 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { User } from '@life-store/user/user.model';
 import * as fromRoot from '@life-store';
-import * as fromUserActions from '@life-store/user/user.actions';
+import { changeLang, setUser} from '@life-store/user/user.actions';
+import { selectLanguage, selectUser } from '@life-store/user/user.selectors';
 
 @Component({
   selector: 'life-home',
@@ -12,30 +13,29 @@ import * as fromUserActions from '@life-store/user/user.actions';
 })
 export class HomePage {
 
-  constructor(private store: Store) {
+  constructor(private store: Store<fromRoot.State>) {
   }
 
   getUser(): Observable<User> {
-    return this.store.select(fromRoot.selectUser);
+    return this.store.select(selectUser);
   }
 
   getLanguage(): Observable<string> {
-    return this.store.select(fromRoot.selectLanguage);
+    return this.store.select(selectLanguage);
   }
 
   addUser() {
-    console.log('addUser on the Store');
     const user = {
       firstName: 'Victor Cesar',
       lastName: 'Peixoto Barbosa',
       email: 'victorcmggg@gmail.com'
     } as User;
-    this.store.dispatch(fromUserActions.setUser({user}));
+    this.store.dispatch(setUser({ user }));
   }
 
+
   setLanguage(language: string) {
-    console.log('addUser on the Store');
-    this.store.dispatch(fromUserActions.changeLang({language}));
+    this.store.dispatch(changeLang({language}));
   }
 
 }
