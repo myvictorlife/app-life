@@ -1,10 +1,10 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
       "@life-store": ["app/core/store/index.ts"],
+      "@life-user-actions": ["app/core/store/user/user.actions"],
       "@life-store/*": ["app/core/store/*"]
     },
     "outDir": "./dist/out-tsc",

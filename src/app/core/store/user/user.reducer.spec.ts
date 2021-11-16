@@ -1,6 +1,7 @@
 import * as fromUserReducer from './user.reducer';
-import * as userActions from './user.actions';
+import { userActions } from './user.actions';
 import { User } from './user.model';
+
 describe('UserReducer', () => {
     it('should return the default state', () => {
         const { initialState } = fromUserReducer;
