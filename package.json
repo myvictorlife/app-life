@@ -91,7 +91,7 @@
     },
     "moduleNameMapper": {
       "@life-store": "<rootDir>/src/app/core/store/index.ts",
-      "@life-store/(.*)": "<rootDir>/src/app/app/core/store/*",
+      "@life-store(.*)": "<rootDir>/src/app/app/core/store/*",
       "config/lang": "<rootDir>/src/config/lang"
     }
   }

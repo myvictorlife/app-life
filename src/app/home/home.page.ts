@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { User } from '@life-store/user/user.model';
-import * as fromRoot from '@life-store';
-import { changeLang, setUser} from '@life-store/user/user.actions';
-import { selectLanguage, selectUser } from '@life-store/user/user.selectors';
+import * as fromUserSelectors from '../core/store/user/user.selectors';
+import { userActions } from '../core/store/user/user.actions';
 
 @Component({
   selector: 'life-home',
@@ -17,11 +16,11 @@ export class HomePage {
   }
 
   getUser(): Observable<User> {
-    return this.store.select(selectUser);
+    return this.store.select(fromUserSelectors.selectUser);
   }
 
   getLanguage(): Observable<string> {
-    return this.store.select(selectLanguage);
+    return this.store.select(fromUserSelectors.selectLanguage);
   }
 
   addUser() {
@@ -30,12 +29,12 @@ export class HomePage {
       lastName: 'Peixoto Barbosa',
       email: 'victorcmggg@gmail.com'
     } as User;
-    this.store.dispatch(setUser({ user }));
+    this.store.dispatch(userActions.setUser({ user }));
   }
 
 
   setLanguage(language: string) {
-    this.store.dispatch(changeLang({language}));
+    this.store.dispatch(userActions.changeLang({language}));
   }
 
 }

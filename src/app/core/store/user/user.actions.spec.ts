@@ -1,25 +1,25 @@
-import { changeLang, load, loadSuccess, setUser } from './user.actions';
+import { userActions } from './user.actions';
 import { User } from './user.model';
 
 
 describe('UserActions', () => {
     it('should load an action', () => {
-        const action = load();
+        const action = userActions.load();
         expect(action).toEqual({ type: '[USER] Load' });
     });
     it('should load an action', () => {
         const user = { firstName: 'Victor Cesar', lastName: 'PB', email: 'life@my-custom-life.com'} as User;
-        const action = setUser({ user });
+        const action = userActions.setUser({ user });
         expect(action).toEqual({ type: '[USER] Set User', user });
     });
 
     it('should load an action', () => {
-        const action = loadSuccess();
+        const action = userActions.loadSuccess();
         expect(action).toEqual({ type: '[USER] Load Success' });
     });
 
     it('should load an action', () => {
-        const action = changeLang({ language: 'en' });
+        const action = userActions.changeLang({ language: 'en' });
         expect(action).toEqual({ type: '[USER] Change Language', language: 'en' });
     });
 });

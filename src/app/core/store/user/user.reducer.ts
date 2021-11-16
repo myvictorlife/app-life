@@ -3,7 +3,7 @@
 import { User } from './user.model';
 import { LANG } from 'config/lang';
 import { createReducer, on } from '@ngrx/store';
-import * as userActions from './user.actions';
+import { userActions } from './user.actions';
 export const feature = 'user';
 
 export interface State {

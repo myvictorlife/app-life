@@ -7,8 +7,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { State } from '@life-store';
 import { User } from '@life-store/user/user.model';
-import * as fromUserSelectors from '@life-store/user/user.selectors';
-
+import * as fromUserSelectors from '../core/store/user/user.selectors';
+import { userActions } from '../core/store/user/user.actions';
 describe('HomePage', () => {
   let component: HomePage;
   let fixture: ComponentFixture<HomePage>;
@@ -43,6 +43,7 @@ describe('HomePage', () => {
     fixture = TestBed.createComponent(HomePage);
     component = fixture.componentInstance;
     store = TestBed.inject(MockStore);
+    //jest.spyOn(store, 'dispatch').callFake(() => {});
   }));
 
   it('should create', () => {
@@ -62,6 +63,28 @@ describe('HomePage', () => {
     const selector = fromUserSelectors.selectLanguage;
     component.getLanguage();
     expect(store.select).toHaveBeenCalledWith(selector);
+  });
+
+  it('should add user', () => {
+    const user = initialState.user.currentUser;
+    jest.spyOn(store, 'dispatch').mockImplementation(() => {});
+    store.dispatch(userActions.setUser({ user }));
+    component.addUser();
+    fixture.detectChanges();
+    expect(store.dispatch).toHaveBeenCalledWith(
+      userActions.setUser({ user })
+    );
+  });
+
+  it('should set language', () => {
+    const user = initialState.user.currentUser;
+    jest.spyOn(store, 'dispatch').mockImplementation(() => {});
+    store.dispatch(userActions.setUser({ user }));
+    component.setLanguage('pt');
+    fixture.detectChanges();
+    expect(store.dispatch).toHaveBeenCalledWith(
+      userActions.changeLang({ language: 'pt' })
+    );
   });
 
 });
