@@ -17,7 +17,8 @@
     "build:ios": "ionic capacitor prepare ios",
     "build:android": "ionic capacitor prepare android",
     "prepush": "npm run pretty-quick && ng lint && npm test:ci",
-    "pretty-quick": "npx pretty-quick --staged"
+    "pretty-quick": "npx pretty-quick --staged",
+    "precommit": "npm run prepush"
   },
   "private": true,
   "dependencies": {
