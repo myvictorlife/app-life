@@ -18,7 +18,8 @@
     "build:android": "ionic capacitor prepare android",
     "prepush": "npm run pretty-quick && ng lint && npm test:ci",
     "pretty-quick": "npx pretty-quick --staged",
-    "precommit": "npm run prepush"
+    "precommit": "npm run prepush",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
