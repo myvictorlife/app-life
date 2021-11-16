@@ -34,6 +34,7 @@ export class HomePage {
 
 
   setLanguage(language: string) {
+
     this.store.dispatch(userActions.changeLang({language}));
   }
 
