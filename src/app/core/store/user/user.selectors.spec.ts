@@ -4,7 +4,7 @@ import { User } from './user.model';
 
 import { State } from '@life-store/index';
 describe('UserSelectors', () => {
-    const initialState: State = { 
+    const initialState: State = {
         user: {
             currentUser: {
                 firstName: 'Victor Cesar',
@@ -23,19 +23,19 @@ describe('UserSelectors', () => {
         it('should select the current user - v1', () => {
             expect(fromUserSelectors.selectUser.projector(initialState)).toEqual(initialState.user.currentUser);
         });
-    
+
         it('should select the current user - v2', () => {
-            const initialState: State = { 
+            const state: State = {
                 user: {
                     currentUser: undefined,
                     currentLang: 'en'
                 }
             };
-            expect(fromUserSelectors.selectUser.projector(initialState)).toEqual(undefined);
+            expect(fromUserSelectors.selectUser.projector(state)).toEqual(undefined);
             expect(fromUserSelectors.selectUser.projector({ user: undefined })).toEqual(undefined);
             expect(fromUserSelectors.selectUser.projector(undefined)).toEqual(undefined);
         });
-    })
+    });
 
     describe('Current Language', () => {
         it('should select the current language - v1', () => {
@@ -46,6 +46,6 @@ describe('UserSelectors', () => {
             expect(fromUserSelectors.selectLanguage.projector(undefined)).toEqual(undefined);
             expect(fromUserSelectors.selectLanguage.projector({ user: undefined })).toEqual(undefined);
         });
-    })
+    });
 
 });

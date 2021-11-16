@@ -13,7 +13,7 @@ describe('HomePage', () => {
   let component: HomePage;
   let fixture: ComponentFixture<HomePage>;
   let store: MockStore;
-  const initialState: State = { 
+  const initialState: State = {
     user: {
         currentUser: {
             firstName: 'Victor Cesar',

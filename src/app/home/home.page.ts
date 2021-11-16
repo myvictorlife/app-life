@@ -13,7 +13,7 @@ import { selectLanguage, selectUser } from '@life-store/user/user.selectors';
 })
 export class HomePage {
 
-  constructor(private store: Store<fromRoot.State>) {
+  constructor(private store: Store) {
   }
 
   getUser(): Observable<User> {
