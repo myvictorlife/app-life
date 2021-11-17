@@ -1,25 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> LIFE </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">LIFE</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <strong>Test Page</strong>
+    <p>
+      Start with Ionic
+      <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"
+        >UI Components</a
+      >
+    </p>
+    <p>NGRX</p>
     <p>User: {{ getUser() | async | json }}</p>
     <p>Language: {{ getLanguage() | async }}</p>
-    <ion-button (click)="setLanguage('pt')" color="primary">Set to Portuguese(pt)</ion-button><br/>
-    <ion-button (click)="setLanguage('en')" color="warning">Set to English(en)</ion-button><br/>
-    <ion-button (click)="addUser()" color="warning">Set User</ion-button><br/>
+    <ion-button (click)="setLanguage('pt')" color="primary">Portuguese(pt)</ion-button><br />
+    <ion-button (click)="setLanguage('en')" color="warning">English(en)</ion-button><br />
+    <ion-button (click)="addUser()" color="warning">Set User</ion-button><br />
+    <ion-button [routerLink]="['/login']" color="info">Start Application</ion-button><br />
   </div>
 </ion-content>

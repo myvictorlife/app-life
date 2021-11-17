@@ -18,14 +18,12 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     IonicModule,
     HomePageRoutingModule,
     StoreModule.forRoot(reducers, {
-      metaReducers
+      metaReducers,
     }),
-    !environment.production ? StoreDevtoolsModule.instrument({  maxAge: 10   }) : [],
-    CoreModule
+    !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 10 }) : [],
+    CoreModule,
   ],
-  providers: [
-    StoreModule
-  ],
-  declarations: [HomePage]
+  providers: [StoreModule],
+  declarations: [HomePage],
 })
 export class HomePageModule {}
