@@ -1,5 +1,6 @@
 {
   "name": "LIFE",
+  "description": "LIFE project",
   "version": "0.0.1",
   "author": "Victor Cesar",
   "homepage": "https://mycustomlife.com.br/",
@@ -14,7 +15,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:ios": "ionic capacitor prepare ios",
-    "build:android": "ionic capacitor prepare android"
+    "build:android": "ionic capacitor prepare android",
+    "pretty-quick": "npx pretty-quick --staged",
+    "precommit": "npm run pretty-quick && ng lint && npm run test:ci",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +43,7 @@
     "@ngrx/store": "^12.5.1",
     "@ngrx/store-devtools": "^12.5.1",
     "cordova-plugin-firebase": "^2.0.5",
+    "prettier": "^2.4.1",
     "rxjs": "~6.6.0",
     "zone.js": "~0.11.4"
   },
@@ -64,15 +69,20 @@
     "eslint-plugin-jsdoc": "30.7.6",
     "eslint-plugin-ngrx": "^1.0.0",
     "eslint-plugin-prefer-arrow": "1.2.2",
+    "husky": "^7.0.4",
     "jasmine-marbles": "^0.8.4",
     "jest": "^27.3.1",
     "jest-preset-angular": "^11.0.0-rc.1",
+    "lint-staged": "^12.0.2",
     "protractor": "~7.0.0",
     "ts-jest": "^27.0.7",
     "ts-node": "~8.3.0",
     "typescript": "~4.2.4"
   },
-  "description": "LIFE project",
+  "husky": {
+    "pre-commit": "npm run lint",
+    "pre-push": "npm run test"
+  },
   "jest": {
     "preset": "jest-preset-angular",
     "roots": [
