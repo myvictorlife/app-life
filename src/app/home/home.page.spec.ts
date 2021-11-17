@@ -9,42 +9,38 @@ import { State } from '@life-store';
 import { User } from '@life-store/user/user.model';
 import * as fromUserSelectors from '../core/store/user/user.selectors';
 import { userActions } from '../core/store/user/user.actions';
+import { RouterTestingModule } from '@angular/router/testing';
 describe('HomePage', () => {
   let component: HomePage;
   let fixture: ComponentFixture<HomePage>;
   let store: MockStore;
   const initialState: State = {
     user: {
-        currentUser: {
-            firstName: 'Victor Cesar',
-            lastName: 'PB',
-            email: 'victorcmggg@gmail.com'
-        } as User,
-        currentLang: 'en'
-    }
+      currentUser: {
+        firstName: 'Victor Cesar',
+        lastName: 'PB',
+        email: 'victorcmggg@gmail.com',
+      } as User,
+      currentLang: 'en',
+    },
   };
 
-  beforeEach((() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePage ],
-      imports: [
-        CommonModule,
-        FormsModule,
-        IonicModule,
-        HomePageRoutingModule
-      ],
+      declarations: [HomePage],
+      imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule, RouterTestingModule],
       providers: [
         provideMockStore({
           initialState,
-        })
-      ]
+        }),
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomePage);
     component = fixture.componentInstance;
     store = TestBed.inject(MockStore);
     //jest.spyOn(store, 'dispatch').callFake(() => {});
-  }));
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
@@ -71,9 +67,7 @@ describe('HomePage', () => {
     store.dispatch(userActions.setUser({ user }));
     component.addUser();
     fixture.detectChanges();
-    expect(store.dispatch).toHaveBeenCalledWith(
-      userActions.setUser({ user })
-    );
+    expect(store.dispatch).toHaveBeenCalledWith(userActions.setUser({ user }));
   });
 
   it('should set language', () => {
@@ -82,9 +76,6 @@ describe('HomePage', () => {
     store.dispatch(userActions.setUser({ user }));
     component.setLanguage('pt');
     fixture.detectChanges();
-    expect(store.dispatch).toHaveBeenCalledWith(
-      userActions.changeLang({ language: 'pt' })
-    );
+    expect(store.dispatch).toHaveBeenCalledWith(userActions.changeLang({ language: 'pt' }));
   });
-
 });
