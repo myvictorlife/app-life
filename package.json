@@ -17,7 +17,7 @@
     "build:ios": "ionic capacitor prepare ios",
     "build:android": "ionic capacitor prepare android",
     "pretty-quick": "npx pretty-quick --staged",
-    "precommit": "npm run pretty-quick && ng lint && npm test:ci",
+    "precommit": "npm run pretty-quick && ng lint",
     "prepare": "husky install"
   },
   "private": true,
@@ -99,12 +99,6 @@
       "@life-store": "<rootDir>/src/app/core/store/index.ts",
       "@life-store(.*)": "<rootDir>/src/app/app/core/store/*",
       "config/lang": "<rootDir>/src/config/lang"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run prepush",
-      "pre-push": "ng build --aot true"
     }
   }
 }
