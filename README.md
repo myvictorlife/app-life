@@ -7,7 +7,7 @@
 
 ##### Now go! Start your journey in search of your best version now.
 
-My Custom Life : ![START_APPLICATION](https://app-life-58b4f.web.app/)
+My Custom Life : [START_APPLICATION](https://app-life-58b4f.web.app/)
 
 Building Knowledge
 
