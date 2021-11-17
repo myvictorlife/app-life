@@ -13,6 +13,9 @@ Building Knowledge
 
 - ✨Magic ✨
 
+![JEST](https://github.com/datencia/ionic2-jest-example/blob/master/readme_resources/yarn_test.gif)
+![NGRX](https://res.cloudinary.com/doiz6iue3/image/upload/v1637186018/ngrx_iv92ri.png)
+
 
 ## Installation
 
