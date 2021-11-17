@@ -16,8 +16,8 @@
     "e2e": "ng e2e",
     "build:ios": "ionic capacitor prepare ios",
     "build:android": "ionic capacitor prepare android",
-    "prepush": "npm run pretty-quick && ng lint && npm test:ci",
     "pretty-quick": "npx pretty-quick --staged",
+    "precommit": "npm run pretty-quick && ng lint && npm test:ci",
     "prepare": "husky install"
   },
   "private": true,
@@ -82,7 +82,7 @@
   "jest": {
     "preset": "jest-preset-angular",
     "roots": [
-      "<rootDir>"
+      "<rootDir>/src"
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/src/jest.config.js"
@@ -101,7 +101,10 @@
       "config/lang": "<rootDir>/src/config/lang"
     }
   },
-  "lint-staged": {
-    "*.js": "eslint --cache --fix"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prepush",
+      "pre-push": "ng build --aot true"
+    }
   }
 }
