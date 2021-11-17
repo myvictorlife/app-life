@@ -18,7 +18,7 @@
     "build:android": "ionic capacitor prepare android",
     "pretty-quick": "npx pretty-quick --staged",
     "precommit": "npm run pretty-quick && ng lint",
-    "postinstall": "husky install"
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
