@@ -4,7 +4,10 @@ const config: CapacitorConfig = {
   appId: 'com.life.mycustomlife',
   appName: 'LIFE',
   webDir: 'www',
-  bundledWebRuntime: false
+  bundledWebRuntime: false,
+  ios: {
+    cordovaLinkerFlags: ['-ObjC'],
+  },
 };
 
 export default config;

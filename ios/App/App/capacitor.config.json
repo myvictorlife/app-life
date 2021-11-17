@@ -1,6 +1,9 @@
 {
-	"appId": "com.life.mycustomlife",
-	"appName": "LIFE",
-	"webDir": "www",
-	"bundledWebRuntime": false
+  "appId": "com.life.mycustomlife",
+  "appName": "LIFE",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "ios": {
+    "cordovaLinkerFlags": ["-ObjC"]
+  }
 }
