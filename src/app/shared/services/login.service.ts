@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class LoginService {
   constructor() {}
 
-  login() {
-    console.log('Login');
+  login(user: any) {
+    console.log(user);
   }
 }
