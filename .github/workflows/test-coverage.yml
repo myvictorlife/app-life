@@ -1,13 +1,12 @@
-name: Build App and Test
+name: Teste Coverage
 on:
   push:
     branches:
-      - refactor
       - main
 
 jobs:
   build:
-    name: Build & Deploy
+    name: Teste Coverage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -15,8 +14,4 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Build
-        run: npm run build
-      - name: Run Lint
-        run: npm run lint
-      - name: Run Tests
-        run: npm run test:ci
+        run: npm run test:coverage
