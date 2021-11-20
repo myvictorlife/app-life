@@ -58,7 +58,7 @@ You will also see any lint errors in the console.
     
 # My Custom Life
 
-YOUTUBE: [YOUTUBE](https://www.youtube.com/channel/UCDu3Euyg97LQo2qBaA-ewVg)
-SITE: [YOUTUBE](https://mycustomlife.com.br/)
-APP: [YOUTUBE](http://mycustom.life/)
-YOUTUBE: [YOUTUBE](https://www.youtube.com/channel/UCDu3Euyg97LQo2qBaA-ewVg)
+[YOUTUBE](https://www.youtube.com/channel/UCDu3Euyg97LQo2qBaA-ewVg) |
+[SITE](https://mycustomlife.com.br/) |
+[APP](http://mycustom.life/) |
+[VIEW MORE](https://linktr.ee/mycustomlifeapp)
