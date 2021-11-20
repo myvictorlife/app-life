@@ -1,7 +1,8 @@
 # LIFE - IONIC 5 NGRX JEST
 ![Build](https://github.com/myvictorlife/app-life/actions/workflows/after-commit.yml/badge.svg)
-![Build](https://github.com/myvictorlife/app-life/actions/workflows/firebase-hosting-pull-request.yml/badge.svg)
 ![Build](https://github.com/myvictorlife/app-life/actions/workflows/test-coverage.yml/badge.svg)
+![Build](https://github.com/myvictorlife/app-life/actions/workflows/firebase-hosting-merge.yml/badge.svg)
+![Build](https://github.com/myvictorlife/app-life/actions/workflows/firebase-hosting-pull-request.yml/badge.svg)
 
 ## Expanda o seu conhecimento!
 
@@ -49,3 +50,7 @@ You will also see any lint errors in the console.
 
     $ npm install
     $ npm start
+    $ npm run test
+    $ npm start test:ci
+    $ npm start test:coverage
+    $ npm run open:staging:ios (build ios in staging and open xcode)
