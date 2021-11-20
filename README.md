@@ -54,3 +54,11 @@ You will also see any lint errors in the console.
     $ npm run test:ci
     $ npm run test:coverage
     $ npm run open:staging:ios (build ios in staging and open xcode)
+    
+    
+# My Custom Life
+
+YOUTUBE: [YOUTUBE](https://www.youtube.com/channel/UCDu3Euyg97LQo2qBaA-ewVg)
+APP: [YOUTUBE](https://mycustomlife.com.br/)
+APP: [YOUTUBE](http://mycustom.life/)
+YOUTUBE: [YOUTUBE](https://www.youtube.com/channel/UCDu3Euyg97LQo2qBaA-ewVg)
