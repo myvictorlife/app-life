@@ -8,14 +8,16 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ios:staging": "ionic capacitor build -c=staging ios",
+    "build:prod": "ionic build -c=production",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:ci": "jest --runInBand",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "copy-update-capacitor-ios": "ionic capacitor sync ios",
-    "open:ios": "npm run copy-update-capacitor-ios && ionic capacitor open ios",
+    "build-ios": "npm run build:ios:staging && ionic capacitor sync ios",
+    "open:ios": "npm run build-ios && ionic capacitor open ios",
     "build:android": "ionic capacitor prepare android",
     "pretty-quick": "npx pretty-quick --staged",
     "precommit": "npm run pretty-quick && ng lint && npm run test:ci",
@@ -65,11 +67,11 @@
     "@types/jest": "^27.0.2",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "4.28.2",
-    "@typescript-eslint/parser": "4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
     "eslint": "^7.26.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
-    "eslint-plugin-ngrx": "^1.0.0",
+    "eslint-plugin-ngrx": "^1.47.0",
     "eslint-plugin-prefer-arrow": "1.2.2",
     "husky": "^7.0.4",
     "jasmine-marbles": "^0.8.4",
@@ -88,7 +90,7 @@
   "jest": {
     "preset": "jest-preset-angular",
     "roots": [
-      "<rootDir>/src"
+      "<rootDir>"
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/src/jest.config.js"
@@ -102,9 +104,11 @@
       }
     },
     "moduleNameMapper": {
-      "@life-store": "<rootDir>/src/app/core/store/index.ts",
-      "@life-store(.*)": "<rootDir>/src/app/app/core/store/*",
-      "config/lang": "<rootDir>/src/config/lang"
+      "^@life-store$": "<rootDir>/src/app/core/store/index.ts",
+      "^@life-store/(.*)$": "<rootDir>/src/app/core/store/$1",
+      "^config/lang$": "<rootDir>/src/config/lang",
+      "^environments/environment$": "<rootDir>/src/environments/environment",
+      "^@life-service(.*)$": "<rootDir>/src/app/shared/services/$1"
     }
   }
 }

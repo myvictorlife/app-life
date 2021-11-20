@@ -1,3 +1,11 @@
+/*
+ * File: home.page.spec.ts
+ * Project: LIFE
+ * Created: Tuesday, 16th November 2021 11:12:43 pm
+ * Last Modified: Saturday, 20th November 2021 7:02:57 pm
+ * Copyright © 2021 My Custom Life
+ */
+
 import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
@@ -5,20 +13,19 @@ import { IonicModule } from '@ionic/angular';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
-import { State } from '@life-store';
-import { User } from '@life-store/user/user.model';
-import * as fromUserSelectors from '../core/store/user/user.selectors';
-import { userActions } from '../core/store/user/user.actions';
+import { User } from '@life-store/models/user.model';
+import * as fromUserSelectors from '@life-store/user/user.selectors';
+import { userActions } from '@life-store/user/user.actions';
 import { RouterTestingModule } from '@angular/router/testing';
 describe('HomePage', () => {
   let component: HomePage;
   let fixture: ComponentFixture<HomePage>;
   let store: MockStore;
-  const initialState: State = {
+  const initialState: any = {
     user: {
       currentUser: {
-        firstName: 'Victor Cesar',
-        lastName: 'PB',
+        firstName: 'App',
+        lastName: 'LIFE',
         email: 'victorcmggg@gmail.com',
       } as User,
       currentLang: 'en',
@@ -28,7 +35,14 @@ describe('HomePage', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [HomePage],
-      imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule, RouterTestingModule],
+      imports: [
+        IonicModule.forRoot(),
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        HomePageRoutingModule,
+        RouterTestingModule,
+      ],
       providers: [
         provideMockStore({
           initialState,
@@ -39,7 +53,6 @@ describe('HomePage', () => {
     fixture = TestBed.createComponent(HomePage);
     component = fixture.componentInstance;
     store = TestBed.inject(MockStore);
-    //jest.spyOn(store, 'dispatch').callFake(() => {});
   });
 
   it('should create', () => {
