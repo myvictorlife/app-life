@@ -1,4 +1,4 @@
-# LIFE - IONIC 5 NGRX JEST
+# LIFE - IONIC 5 | ANGULAR 12 | NGRX | JEST
 ![Build](https://github.com/myvictorlife/app-life/actions/workflows/after-commit.yml/badge.svg)
 ![Build](https://github.com/myvictorlife/app-life/actions/workflows/test-coverage.yml/badge.svg)
 ![Build](https://github.com/myvictorlife/app-life/actions/workflows/firebase-hosting-merge.yml/badge.svg)
