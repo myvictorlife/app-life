@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
-import { LoginService } from '../../shared/services/login.service';
+import { AuthService } from '@life-service/auth/auth.service';
 
 @Component({
   selector: 'life-login',
@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
     ],
   };
 
-  constructor(private loginService: LoginService, public alertController: AlertController) {}
+  constructor(private authService: AuthService, public alertController: AlertController) {}
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -42,8 +42,10 @@ export class LoginPage implements OnInit {
 
   doLogin() {
     const user = this.loginForm.getRawValue();
-    this.loginService.login(user);
-    this.presentAlert();
+    this.authService.doLogin(user).subscribe((response: any) => {
+      console.log(response);
+      this.presentAlert();
+    });
   }
 
   async presentAlert() {

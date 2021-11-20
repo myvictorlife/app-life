@@ -1,0 +1,44 @@
+/*
+ * File: health.service.ts
+ * Project: LIFE
+ * Created: Saturday, 20th November 2021 9:22:01 am
+ * Last Modified: Saturday, 20th November 2021 7:02:27 pm
+ * Copyright © 2021 My Custom Life
+ */
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Health } from '@life-store/models/health.model';
+import { environment } from 'environments/environment';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class HealthService {
+  private endpoint = {
+    baseURL: environment.baseUrl,
+    apis: environment.apis.health,
+  };
+
+  constructor(private httpClient: HttpClient) {}
+
+  getInfo(): Observable<Health> {
+    return this.httpClient
+      .get<Health>(this.getHealthInfoURL())
+      .pipe(catchError(this.handleError<Health>('Get info', {} as Health)));
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      console.log(`${operation} failed: ${error.message}`);
+      return of(result as T);
+    };
+  }
+
+  private getHealthInfoURL(): string {
+    return `${this.endpoint.baseURL}${this.endpoint.apis.info}`;
+  }
+}

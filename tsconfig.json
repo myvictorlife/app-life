@@ -5,7 +5,8 @@
     "paths": {
       "@life-store": ["app/core/store/index.ts"],
       "@life-user-actions": ["app/core/store/user/user.actions"],
-      "@life-store/*": ["app/core/store/*"]
+      "@life-store/*": ["app/core/store/*"],
+      "@life-service/*": ["app/shared/services/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

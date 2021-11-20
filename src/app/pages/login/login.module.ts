@@ -8,7 +8,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { ComponentsModule } from '../../components/components.module';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +17,7 @@ import { ComponentsModule } from '../../components/components.module';
     LoginPageRoutingModule,
     ReactiveFormsModule,
     ComponentsModule,
+    HttpClientModule,
   ],
   declarations: [LoginPage],
 })
