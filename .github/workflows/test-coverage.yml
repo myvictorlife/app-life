@@ -1,17 +1,17 @@
-name: Teste Coverage
+name: 'coverage'
 on:
-  push:
+  pull_request:
     branches:
+      - master
       - main
-
+      - feat-0000-add-user-registration-screen
 jobs:
-  build:
-    name: Teste Coverage
+  coverage:
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Install Dependencies
-        run: npm install
-      - name: Build
-        run: npm run test:coverage
+      - uses: actions/checkout@v1
+      - uses: artiomtr/jest-coverage-report-action@v2.0-rc.5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          threshold: 80 # optional parameter

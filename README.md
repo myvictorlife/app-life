@@ -1,5 +1,7 @@
 # LIFE - IONIC 5 | ANGULAR 12 | NGRX | JEST
-![Build](https://github.com/myvictorlife/app-life/actions/workflows/after-commit.yml/badge.svg)
+
+![Build](https://github.com/myvictorlife/app-life/actions/workflows/build.yml/badge.svg)
+![Build](https://github.com/myvictorlife/app-life/actions/workflows/lint.yml/badge.svg)
 ![Build](https://github.com/myvictorlife/app-life/actions/workflows/test-coverage.yml/badge.svg)
 ![Build](https://github.com/myvictorlife/app-life/actions/workflows/firebase-hosting-merge.yml/badge.svg)
 ![Build](https://github.com/myvictorlife/app-life/actions/workflows/firebase-hosting-pull-request.yml/badge.svg)
@@ -7,7 +9,6 @@
 ### If you are a developer and you are looking for an mobile application using the best tools, this application is for you.
 
 ## Expanda o seu conhecimento!
-
 
 ##### Now go! Start your journey in search of your best version now.
 
@@ -54,8 +55,7 @@ You will also see any lint errors in the console.
     $ npm run test:ci
     $ npm run test:coverage
     $ npm run open:staging:ios (build ios in staging and open xcode)
-    
-    
+
 # My Custom Life
 
 [YOUTUBE](https://www.youtube.com/channel/UCDu3Euyg97LQo2qBaA-ewVg) |

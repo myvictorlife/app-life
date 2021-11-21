@@ -11,7 +11,7 @@
     "build:ios:staging": "ionic capacitor build -c=staging ios",
     "build:prod": "ionic build -c=production",
     "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test:coverage": "npx jest --silent --ci --coverage --coverageReporters='text' --coverageReporters='text-summary'",
     "test:watch": "jest --watch",
     "test:ci": "jest --runInBand",
     "lint": "ng lint",
@@ -108,7 +108,9 @@
       "^@life-store/(.*)$": "<rootDir>/src/app/core/store/$1",
       "^config/lang$": "<rootDir>/src/config/lang",
       "^environments/environment$": "<rootDir>/src/environments/environment",
-      "^@life-service(.*)$": "<rootDir>/src/app/shared/services/$1"
+      "^@life-service(.*)$": "<rootDir>/src/app/shared/services/$1",
+      "^@life-components(.*)$": "<rootDir>/src/app/components/$1",
+      "^@life-shared(.*)$": "<rootDir>/src/app/shared/$1"
     }
   }
 }

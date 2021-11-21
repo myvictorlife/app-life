@@ -6,7 +6,9 @@
       "@life-store": ["app/core/store/index.ts"],
       "@life-user-actions": ["app/core/store/user/user.actions"],
       "@life-store/*": ["app/core/store/*"],
-      "@life-service/*": ["app/shared/services/*"]
+      "@life-service/*": ["app/shared/services/*"],
+      "@life-components/*": ["app/components/*"],
+      "@life-shared/*": ["app/shared/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
