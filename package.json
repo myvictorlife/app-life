@@ -11,7 +11,7 @@
     "build:ios:staging": "ionic capacitor build -c=staging ios",
     "build:prod": "ionic build -c=production",
     "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test:coverage": "npx jest --silent --ci --coverage --coverageReporters='text' --coverageReporters='text-summary'",
     "test:watch": "jest --watch",
     "test:ci": "jest --runInBand",
     "lint": "ng lint",
