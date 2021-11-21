@@ -4,9 +4,9 @@
 ![Build](https://github.com/myvictorlife/app-life/actions/workflows/firebase-hosting-merge.yml/badge.svg)
 ![Build](https://github.com/myvictorlife/app-life/actions/workflows/firebase-hosting-pull-request.yml/badge.svg)
 
-## Expanda o seu conhecimento!
+### If you are a developer and you are looking for an mobile application using the best tools, this application is for you.
 
-[![N|Solid](https://res.cloudinary.com/doiz6iue3/image/upload/c_thumb,w_200,g_face/v1636886664/Captura_de_Tela_2021-11-14_a%CC%80s_11.44.14_kclcly.png)](https://ionicframework.com/) [![N|Solid](https://res.cloudinary.com/doiz6iue3/image/upload/c_thumb,w_200,g_face/v1636886877/Captura_de_Tela_2021-11-14_a%CC%80s_11.47.22_joprcm.png)](https://ngrx.io/)
+## Expanda o seu conhecimento!
 
 
 ##### Now go! Start your journey in search of your best version now.
