@@ -1,4 +1,4 @@
-name: Running Code Coverage
+name: Running Test Coverage
 
 on: [push, pull_request]
 
