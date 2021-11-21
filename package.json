@@ -7,6 +7,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "build:staging": "ng build -c=staging",
     "build": "ng build",
     "build:ios:staging": "ionic capacitor build -c=staging ios",
     "build:prod": "ionic build -c=production",
