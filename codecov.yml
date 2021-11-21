@@ -1,2 +1,7 @@
-codecov:
-  token: 8220e71f-7740-4100-a9d5-dcec4de375e3
+coverage:
+  status:
+    project:
+      default:
+        # Allow decreasing 80% of total coverage to avoid noise.
+        threshold: 80%
+    patch: off
