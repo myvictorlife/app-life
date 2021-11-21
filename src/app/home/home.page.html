@@ -13,6 +13,10 @@
 
   <div id="container">
     <strong>Test Page</strong>
+    <div *ngIf="(lifeInfo$ | async)">
+      <p>App Name: {{ (lifeInfo$ | async).appName }}</p>
+      <p>App Name: {{ (lifeInfo$ | async).version }}</p>
+    </div>
     <p>
       Start with Ionic
       <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"
@@ -26,7 +30,6 @@
     <ion-button (click)="setLanguage('en')" color="warning">English(en)</ion-button><br />
     <ion-button (click)="addUser()" color="warning">Set User</ion-button><br />
     <ion-button (click)="getLifeInfo()" color="warning">Get Life Info</ion-button><br />
-    <p>Info: {{ lifeInfo$ | async | json }}</p>
     <ion-button [routerLink]="['/login']" color="info">Start Application</ion-button><br />
   </div>
 </ion-content>

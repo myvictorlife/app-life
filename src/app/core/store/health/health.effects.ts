@@ -2,7 +2,7 @@
  * File: health.effects.ts
  * Project: LIFE
  * Created: Saturday, 20th November 2021 9:16:27 am
- * Last Modified: Saturday, 20th November 2021 7:03:43 pm
+ * Last Modified: Sunday, 21st November 2021 11:10:28 am
  * Copyright © 2021 My Custom Life
  */
 
@@ -15,8 +15,8 @@ import { EMPTY } from 'rxjs';
 
 @Injectable()
 export class HealthEffects {
-  /* eslint-disable-next-line */
   healthInfo$ = createEffect(() =>
+    /* eslint-disable-next-line */
     this.actions$.pipe(
       ofType(healthActions.getInfo),
       mergeMap(() =>
