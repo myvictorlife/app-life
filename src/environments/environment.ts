@@ -4,13 +4,16 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:5001/app-life-58b4f/us-central1',
+  baseUrl: 'https://us-central1-app-life-58b4f.cloudfunctions.net/api',
   apis: {
     health: {
       info: '/lifeInfo',
     },
     auth: {
       login: '/auth/login',
+    },
+    user: {
+      createNewUser: '/signup',
     },
   },
 };

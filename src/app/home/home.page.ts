@@ -2,7 +2,7 @@
  * File: home.page.ts
  * Project: LIFE
  * Created: Tuesday, 16th November 2021 11:12:43 pm
- * Last Modified: Saturday, 20th November 2021 7:02:35 pm
+ * Last Modified: Tuesday, 23rd November 2021 11:16:39 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -43,7 +43,7 @@ export class HomePage implements OnInit {
       lastName: 'Life',
       email: '*****e@my-custom-life.com',
     } as User;
-    this.store.dispatch(userActions.setUser({ user }));
+    this.store.dispatch(userActions.createUser({ user }));
   }
 
   setLanguage(language: string) {
