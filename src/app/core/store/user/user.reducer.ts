@@ -19,6 +19,10 @@ export const reducer = createReducer(
   on(userActions.loadSuccess, (state: State): State => ({ ...state })),
   on(userActions.setUser, (state: State, { user }): State => ({ ...state, currentUser: user })),
   on(
+    userActions.userCreatedSucessfully,
+    (state: State, { user }): State => ({ ...state, currentUser: user }),
+  ),
+  on(
     userActions.changeLang,
     (state: State, { language }): State => ({
       ...state,
