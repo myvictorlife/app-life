@@ -2,7 +2,7 @@
  * File: login.page.ts
  * Project: LIFE
  * Created: Saturday, 20th November 2021 11:43:54 pm
- * Last Modified: Saturday, 27th November 2021 8:08:38 am
+ * Last Modified: Saturday, 27th November 2021 2:27:35 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -67,14 +67,14 @@ export class LoginPage implements OnInit {
     this.actions$
       .pipe(ofType(authActions.signInWithEmailAndPasswordSuccess))
       .subscribe((data: any) => {
-        console.log('HUUUPP', data);
+        console.log('HUUUPP :)', data);
         this.presentAlert();
       });
 
     this.actions$
       .pipe(ofType(authActions.signInWithEmailAndPasswordFailed))
       .subscribe((error: any) => {
-        console.log('IIIIIIII', error);
+        console.log('Error :(', error);
         this.presentAlertError(error.message);
       });
   }
