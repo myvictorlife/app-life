@@ -1,6 +1,7 @@
 # LIFE - IONIC 5 | ANGULAR 12 | NGRX | JEST
 
 ![Build](https://github.com/myvictorlife/app-life/actions/workflows/build.yml/badge.svg)
+![CodeQL](https://github.com/myvictorlife/app-life/actions/workflows/codeql-analysis.yml/badge.svg)
 [![codecov](https://codecov.io/gh/myvictorlife/app-life/branch/main/graph/badge.svg)](https://app.codecov.io/gh/myvictorlife/app-life)
 ![firebase hosting](https://github.com/myvictorlife/app-life/actions/workflows/firebase-hosting-merge.yml/badge.svg)
 ![firebase Build](https://github.com/myvictorlife/app-life/actions/workflows/firebase-hosting-pull-request.yml/badge.svg)
