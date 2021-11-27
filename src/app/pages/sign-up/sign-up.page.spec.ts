@@ -2,7 +2,7 @@
  * File: sign-up.page.spec.ts
  * Project: LIFE
  * Created: Sunday, 21st November 2021 12:25:43 pm
- * Last Modified: Wednesday, 24th November 2021 11:42:52 pm
+ * Last Modified: Saturday, 27th November 2021 3:03:13 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -76,6 +76,10 @@ describe('SignUpPage', () => {
       email: 'unit-test@life.com',
       password: '',
     };
+    const signupForm = component.signupForm;
     expect(store.dispatch).toHaveBeenCalledWith(userActions.createUser({ user }));
+    expect(signupForm.value.email).toEqual(null);
+    expect(signupForm.value.matchingPasswords.password).toEqual(null);
   });
+
 });
