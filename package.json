@@ -52,6 +52,7 @@
     "cordova-plugin-firebase": "^2.0.5",
     "firebase": "^9.5.0",
     "prettier": "^2.4.1",
+    "rxfire": "^6.0.3",
     "rxjs": "~6.6.0",
     "zone.js": "~0.11.4"
   },
