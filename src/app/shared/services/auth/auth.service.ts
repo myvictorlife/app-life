@@ -1,9 +1,17 @@
-import { HttpClient } from '@angular/common/http';
+/*
+ * File: auth.service.ts
+ * Project: LIFE
+ * Created: Thursday, 25th November 2021 6:47:38 pm
+ * Last Modified: Friday, 26th November 2021 11:33:53 pm
+ * Copyright © 2021 My Custom Life
+ */
+
 import { Injectable } from '@angular/core';
-import { User } from '@life-store/models/user.model';
 import { environment } from 'environments/environment';
-import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { from, Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import * as auth from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root',
@@ -11,12 +19,13 @@ import { catchError } from 'rxjs/operators';
 export class AuthService {
   private endpoint = environment;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private angularFireAuth: AngularFireAuth) {}
 
-  doLogin(credentials: any): Observable<User> {
-    return this.httpClient
-      .post<User>(this.getAuthURL(), credentials)
-      .pipe(catchError(this.handleError<any>('Get Life Info', {} as any)));
+  doLogin(email: string, password: string): Observable<auth.UserCredential> {
+    return from(this.angularFireAuth.signInWithEmailAndPassword(email, password)).pipe(
+      map((user) => user),
+      catchError(this.handleError<any>('Get Life Info', {} as any)),
+    );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
@@ -28,6 +37,6 @@ export class AuthService {
   }
 
   private getAuthURL() {
-    return this.endpoint.baseUrl + this.endpoint.apis.auth.login;
+    return this.endpoint.baseUrl + this.endpoint.functions.user + this.endpoint.apis.auth.login;
   }
 }

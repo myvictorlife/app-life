@@ -2,7 +2,7 @@
  * File: home.page.spec.ts
  * Project: LIFE
  * Created: Tuesday, 16th November 2021 11:12:43 pm
- * Last Modified: Saturday, 20th November 2021 8:10:34 pm
+ * Last Modified: Friday, 26th November 2021 11:41:54 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -73,15 +73,6 @@ describe('HomePage', () => {
     const selector = fromUserSelectors.selectLanguage;
     component.getLanguage();
     expect(store.select).toHaveBeenCalledWith(selector);
-  });
-
-  it('should add user', () => {
-    const user = initialState.user.currentUser;
-    jest.spyOn(store, 'dispatch').mockImplementation(() => {});
-    store.dispatch(userActions.setUser({ user }));
-    component.addUser();
-    fixture.detectChanges();
-    expect(store.dispatch).toHaveBeenCalledWith(userActions.setUser({ user }));
   });
 
   it('should set language', () => {

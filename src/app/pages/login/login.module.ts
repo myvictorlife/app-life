@@ -9,6 +9,10 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
 import { ComponentsModule } from '../../components/components.module';
 import { HttpClientModule } from '@angular/common/http';
+
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { CoreModule } from '@life-store/core.module';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     ComponentsModule,
     HttpClientModule,
+    AngularFireAuthModule,
+    CoreModule,
   ],
   declarations: [LoginPage],
 })

@@ -1,7 +1,17 @@
+/*
+ * File: login.page.ts
+ * Project: LIFE
+ * Created: Saturday, 20th November 2021 11:43:54 pm
+ * Last Modified: Saturday, 27th November 2021 8:08:38 am
+ * Copyright © 2021 My Custom Life
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
-import { AuthService } from '@life-service/auth/auth.service';
+import { authActions } from '@life-store/auth/auth.actions';
+import { Store } from '@ngrx/store';
+import { Actions, ofType } from '@ngrx/effects';
 
 @Component({
   selector: 'life-login',
@@ -22,30 +32,51 @@ export class LoginPage implements OnInit {
     ],
   };
 
-  constructor(private authService: AuthService, public alertController: AlertController) {}
+  constructor(
+    public alertController: AlertController,
+    private store: Store,
+    private actions$: Actions,
+  ) {}
 
   ngOnInit() {
     this.loginForm = new FormGroup({
       email: new FormControl(
-        '',
+        'life@my-custom-life.com',
         Validators.compose([
           Validators.required,
           Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
         ]),
       ),
       password: new FormControl(
-        '',
+        '123456',
         Validators.compose([Validators.minLength(5), Validators.required]),
       ),
     });
   }
 
   doLogin() {
-    const user = this.loginForm.getRawValue();
-    this.authService.doLogin(user).subscribe((response: any) => {
-      console.log(response);
-      this.presentAlert();
-    });
+    const { email, password } = this.loginForm.getRawValue();
+
+    this.store.dispatch(
+      authActions.signInWithEmailAndPassword({
+        email,
+        password,
+      }),
+    );
+
+    this.actions$
+      .pipe(ofType(authActions.signInWithEmailAndPasswordSuccess))
+      .subscribe((data: any) => {
+        console.log('HUUUPP', data);
+        this.presentAlert();
+      });
+
+    this.actions$
+      .pipe(ofType(authActions.signInWithEmailAndPasswordFailed))
+      .subscribe((error: any) => {
+        console.log('IIIIIIII', error);
+        this.presentAlertError(error.message);
+      });
   }
 
   async presentAlert() {
@@ -54,6 +85,21 @@ export class LoginPage implements OnInit {
       header: 'Alert',
       subHeader: 'Logged',
       message: 'Thank you for using the app.',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
+
+  async presentAlertError(message: string) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Alert',
+      subHeader: 'Not Logged',
+      message,
       buttons: ['OK'],
     });
 

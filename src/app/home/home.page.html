@@ -16,6 +16,7 @@
     <div *ngIf="(lifeInfo$ | async)">
       <p>App Name: {{ (lifeInfo$ | async).appName }}</p>
       <p>App Name: {{ (lifeInfo$ | async).version }}</p>
+      <p>App Name: {{ (lifeInfo$ | async) | json }}</p>
     </div>
     <p>
       Start with Ionic
@@ -28,7 +29,6 @@
     <p>Language: {{ getLanguage() | async }}</p>
     <ion-button (click)="setLanguage('pt')" color="primary">Portuguese(pt)</ion-button><br />
     <ion-button (click)="setLanguage('en')" color="warning">English(en)</ion-button><br />
-    <ion-button (click)="addUser()" color="warning">Set User</ion-button><br />
     <ion-button (click)="getLifeInfo()" color="warning">Get Life Info</ion-button><br />
     <ion-button [routerLink]="['/login']" color="info">Start Application</ion-button><br />
   </div>

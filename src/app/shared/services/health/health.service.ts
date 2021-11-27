@@ -2,7 +2,7 @@
  * File: health.service.ts
  * Project: LIFE
  * Created: Saturday, 20th November 2021 9:22:01 am
- * Last Modified: Saturday, 20th November 2021 7:02:27 pm
+ * Last Modified: Friday, 26th November 2021 10:40:02 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -17,14 +17,12 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class HealthService {
-  private endpoint = {
-    baseURL: environment.baseUrl,
-    apis: environment.apis.health,
-  };
+  private endpoint = environment;
 
   constructor(private httpClient: HttpClient) {}
 
   getInfo(): Observable<Health> {
+    console.log(this.getHealthInfoURL());
     return this.httpClient
       .get<Health>(this.getHealthInfoURL())
       .pipe(catchError(this.handleError<Health>('Get info', {} as Health)));
@@ -39,6 +37,6 @@ export class HealthService {
   }
 
   private getHealthInfoURL(): string {
-    return `${this.endpoint.baseURL}${this.endpoint.apis.info}`;
+    return `${this.endpoint.baseUrl}${this.endpoint.functions.health}${this.endpoint.apis.health.info}`;
   }
 }

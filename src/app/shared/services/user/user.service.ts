@@ -2,7 +2,7 @@
  * File: user.service.ts
  * Project: LIFE
  * Created: Tuesday, 23rd November 2021 9:34:45 pm
- * Last Modified: Wednesday, 24th November 2021 5:58:09 pm
+ * Last Modified: Friday, 26th November 2021 11:35:23 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -17,10 +17,7 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class UserService {
-  private endpoint = {
-    baseURL: environment.baseUrl,
-    user: environment.apis.user,
-  };
+  private endpoint = environment;
 
   constructor(private httpClient: HttpClient) {}
 
@@ -39,6 +36,6 @@ export class UserService {
     };
   }
   private getNewUserURL(): string {
-    return `${this.endpoint.baseURL}${this.endpoint.user.createNewUser}`;
+    return `${this.endpoint.baseUrl}${this.endpoint.functions.user}${this.endpoint.apis.user.createNewUser}`;
   }
 }
