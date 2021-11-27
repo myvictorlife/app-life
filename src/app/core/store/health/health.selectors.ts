@@ -2,12 +2,11 @@
  * File: health.selectors.ts
  * Project: LIFE
  * Created: Friday, 19th November 2021 11:42:21 pm
- * Last Modified: Saturday, 20th November 2021 7:03:36 pm
+ * Last Modified: Friday, 26th November 2021 8:50:42 pm
  * Copyright © 2021 My Custom Life
  */
 
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { State } from '@life-store/index';
 import * as fromHealth from './health.reducers';
 
 // Health Info
