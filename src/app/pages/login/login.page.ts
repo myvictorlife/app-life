@@ -2,7 +2,7 @@
  * File: login.page.ts
  * Project: LIFE
  * Created: Saturday, 20th November 2021 11:43:54 pm
- * Last Modified: Saturday, 27th November 2021 2:27:35 pm
+ * Last Modified: Saturday, 27th November 2021 2:57:49 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -41,14 +41,14 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.loginForm = new FormGroup({
       email: new FormControl(
-        'life@my-custom-life.com',
+        '',
         Validators.compose([
           Validators.required,
           Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
         ]),
       ),
       password: new FormControl(
-        '123456',
+        '',
         Validators.compose([Validators.minLength(5), Validators.required]),
       ),
     });
