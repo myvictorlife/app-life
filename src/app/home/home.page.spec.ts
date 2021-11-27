@@ -2,7 +2,7 @@
  * File: home.page.spec.ts
  * Project: LIFE
  * Created: Tuesday, 16th November 2021 11:12:43 pm
- * Last Modified: Friday, 26th November 2021 11:41:54 pm
+ * Last Modified: Saturday, 27th November 2021 11:46:43 am
  * Copyright © 2021 My Custom Life
  */
 
@@ -18,6 +18,15 @@ import * as fromUserSelectors from '@life-store/user/user.selectors';
 import { userActions } from '@life-store/user/user.actions';
 import { RouterTestingModule } from '@angular/router/testing';
 import { healthActions } from '@life-store/health/health.actions';
+
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { Observable, of } from 'rxjs';
+
+class FakeLoader implements TranslateLoader {
+  getTranslation(lang: string): Observable<any> {
+    return of({ test: 'This is a Fake translate' });
+  }
+}
 describe('HomePage', () => {
   let component: HomePage;
   let fixture: ComponentFixture<HomePage>;
@@ -43,6 +52,12 @@ describe('HomePage', () => {
         IonicModule,
         HomePageRoutingModule,
         RouterTestingModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: FakeLoader,
+          },
+        }),
       ],
       providers: [
         provideMockStore({

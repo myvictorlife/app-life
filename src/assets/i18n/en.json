@@ -1,0 +1,8 @@
+{
+  "APP_NAME": "LIFE",
+  "TEST_PAGE": "Test Page",
+  "HOME_PAGE": {
+    "NAME": "App Name",
+    "VERSION": "Version"
+  }
+}

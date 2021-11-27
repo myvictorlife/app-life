@@ -1,29 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> LIFE </ion-title>
+    <ion-title>{{ 'APP_NAME' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">LIFE</ion-title>
+      <ion-title size="large">{{ 'APP_NAME' | translate }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Test Page</strong>
+    <strong>{{ 'TEST_PAGE' | translate }}</strong>
     <div *ngIf="(lifeInfo$ | async)">
-      <p>App Name: {{ (lifeInfo$ | async).appName }}</p>
-      <p>App Name: {{ (lifeInfo$ | async).version }}</p>
-      <p>App Name: {{ (lifeInfo$ | async) | json }}</p>
+      <p>{{ 'HOME_PAGE.NAME' | translate }}: {{ (lifeInfo$ | async).appName }}</p>
+      <p>{{ 'HOME_PAGE.VERSION' | translate }}: {{ (lifeInfo$ | async).version }}</p>
     </div>
-    <p>
-      Start with Ionic
-      <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"
-        >UI Components</a
-      >
-    </p>
     <p>NGRX</p>
     <p>User: {{ getUser() | async | json }}</p>
     <p>Language: {{ getLanguage() | async }}</p>
