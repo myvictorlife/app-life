@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+      - name: Remove Node Modules
+        uses: rm -rf node_modules
       - name: Install Dependencies
         run: npm install
       - name: Build
