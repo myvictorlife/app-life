@@ -1,3 +1,11 @@
+/*
+ * File: app.module.ts
+ * Project: LIFE
+ * Created: Saturday, 27th November 2021 8:55:47 am
+ * Last Modified: Saturday, 27th November 2021 10:58:43 am
+ * Copyright © 2021 My Custom Life
+ */
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -6,13 +14,19 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from 'environments/environment';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { metaReducers, reducers } from '@life-store';
+
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+const createTranslateLoader = (http: HttpClient) =>
+  new TranslateHttpLoader(http, './assets/i18n/', '.json');
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +41,13 @@ import { metaReducers, reducers } from '@life-store';
       metaReducers,
     }),
     EffectsModule.forRoot([]),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

@@ -2,7 +2,7 @@
  * File: home.page.ts
  * Project: LIFE
  * Created: Tuesday, 16th November 2021 11:12:43 pm
- * Last Modified: Friday, 26th November 2021 10:27:02 pm
+ * Last Modified: Saturday, 27th November 2021 11:31:16 am
  * Copyright © 2021 My Custom Life
  */
 
@@ -23,6 +23,7 @@ import { selectHealthInfo } from '@life-store/health/health.selectors';
 })
 export class HomePage implements OnInit {
   lifeInfo$: Observable<Health>;
+  language;
   constructor(private store: Store) {}
 
   ngOnInit() {
