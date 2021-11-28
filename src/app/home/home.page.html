@@ -17,8 +17,6 @@
       <p>{{ 'HOME_PAGE.NAME' | translate }}: {{ (lifeInfo$ | async).appName }}</p>
       <p>{{ 'HOME_PAGE.VERSION' | translate }}: {{ (lifeInfo$ | async).version }}</p>
     </div>
-    <p>NGRX</p>
-    <p>User: {{ getUser() | async | json }}</p>
     <p>Language: {{ getLanguage() | async }}</p>
     <ion-button (click)="setLanguage('pt')" color="primary">Portuguese(pt)</ion-button><br />
     <ion-button (click)="setLanguage('en')" color="warning">English(en)</ion-button><br />

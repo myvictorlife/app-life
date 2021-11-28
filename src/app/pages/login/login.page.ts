@@ -2,7 +2,7 @@
  * File: login.page.ts
  * Project: LIFE
  * Created: Saturday, 20th November 2021 11:43:54 pm
- * Last Modified: Saturday, 27th November 2021 2:27:35 pm
+ * Last Modified: Sunday, 28th November 2021 5:53:30 am
  * Copyright © 2021 My Custom Life
  */
 
@@ -12,6 +12,7 @@ import { AlertController } from '@ionic/angular';
 import { authActions } from '@life-store/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { Actions, ofType } from '@ngrx/effects';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'life-login',
@@ -36,6 +37,7 @@ export class LoginPage implements OnInit {
     public alertController: AlertController,
     private store: Store,
     private actions$: Actions,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -67,8 +69,7 @@ export class LoginPage implements OnInit {
     this.actions$
       .pipe(ofType(authActions.signInWithEmailAndPasswordSuccess))
       .subscribe((data: any) => {
-        console.log('HUUUPP :)', data);
-        this.presentAlert();
+        this.redirectToHomePage();
       });
 
     this.actions$
@@ -79,19 +80,8 @@ export class LoginPage implements OnInit {
       });
   }
 
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Alert',
-      subHeader: 'Logged',
-      message: 'Thank you for using the app.',
-      buttons: ['OK'],
-    });
-
-    await alert.present();
-
-    const { role } = await alert.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
+  async redirectToHomePage() {
+    this.router.navigate(['home']);
   }
 
   async presentAlertError(message: string) {
