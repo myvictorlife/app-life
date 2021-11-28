@@ -2,7 +2,7 @@
  * File: app.module.ts
  * Project: LIFE
  * Created: Saturday, 27th November 2021 8:55:47 am
- * Last Modified: Saturday, 27th November 2021 10:58:43 am
+ * Last Modified: Sunday, 28th November 2021 5:17:13 am
  * Copyright © 2021 My Custom Life
  */
 
@@ -21,6 +21,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { metaReducers, reducers } from '@life-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -48,6 +49,7 @@ const createTranslateLoader = (http: HttpClient) =>
         deps: [HttpClient],
       },
     }),
+    !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 10 }) : [],
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
