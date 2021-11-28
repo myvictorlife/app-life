@@ -2,7 +2,7 @@
  * File: sign-up.page.ts
  * Project: LIFE
  * Created: Sunday, 21st November 2021 12:25:43 pm
- * Last Modified: Wednesday, 24th November 2021 11:41:15 pm
+ * Last Modified: Saturday, 27th November 2021 3:01:08 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -14,6 +14,7 @@ import { Store } from '@ngrx/store';
 import { User } from '@life-store/models/user.model';
 import { Observable } from 'rxjs';
 import { selectUser } from '@life-store/user/user.selectors';
+import { Router } from '@angular/router';
 @Component({
   selector: 'life-sign-up',
   templateUrl: './sign-up.page.html',
@@ -41,7 +42,7 @@ export class SignUpPage implements OnInit {
     confirmPassword: [{ type: 'required', message: 'Confirm password is required' }],
     matchingPasswords: [{ type: 'areNotEqual', message: 'Password mismatch' }],
   };
-  constructor(private store: Store) {}
+  constructor(private store: Store, private router: Router) {}
 
   ngOnInit() {
     this.user$ = this.store.select(selectUser);
@@ -73,5 +74,6 @@ export class SignUpPage implements OnInit {
     const password = this.signupForm.value.matchingPasswords.password;
     const user: User = { firstName: '', lastName: '', email, password };
     this.store.dispatch(userActions.createUser({ user }));
+    this.signupForm.reset();
   }
 }

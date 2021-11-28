@@ -96,5 +96,11 @@
     </ion-row>
   </form>
 
-  New User Created: {{ (user$ | async ) | json }}
+  <div *ngIf="!!(user$ | async )">
+    New User Created: {{ (user$ | async ) | json }}
+    <ion-button class="login-btn" fill="clear" [routerLink]="['/login']">
+      Back
+    </ion-button>
+  </div>
+ 
 </ion-content>
