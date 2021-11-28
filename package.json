@@ -6,7 +6,7 @@
   "homepage": "https://mycustomlife.com.br/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ionic serve --lab",
     "build:staging": "ng build -c=staging",
     "build": "ng build",
     "build:android:staging": "npm run build:staging && ionic capacitor build android",
