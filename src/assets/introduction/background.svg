@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="254mm" height="451.556mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 25400 45156"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:white}
+    .fil2 {fill:#FEFEFE;fill-opacity:0.701961}
+    .fil0 {fill:url(#id0)}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="12700" y1="0" x2="12700" y2="45155.6">
+   <stop offset="0" style="stop-opacity:1; stop-color:#31AAD6"/>
+   <stop offset="0.301961" style="stop-opacity:1; stop-color:#D2EDEF"/>
+   <stop offset="0.439216" style="stop-opacity:1; stop-color:#F3F3F3"/>
+   <stop offset="0.619608" style="stop-opacity:1; stop-color:#C8E3EC"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#31AAD6"/>
+  </linearGradient>
+ </defs>
+ <g id="Camada_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1086152704">
+   <rect class="fil0" width="25400" height="45156"/>
+   <rect class="fil1" x="2410" y="3011" width="20580" height="39133"/>
+   <polygon class="fil1" points="0,5047 1303,5047 1303,38465 0,38465 "/>
+   <polygon class="fil1" points="24097,5047 25400,5047 25400,38465 24097,38465 "/>
+  </g>
+  <polygon class="fil2" points="4076,20118 21324,20118 21324,32156 4076,32156 "/>
+ </g>
+</svg>

@@ -2,7 +2,7 @@
  * File: login.page.spec.ts
  * Project: LIFE
  * Created: Wednesday, 17th November 2021 9:33:19 pm
- * Last Modified: Saturday, 27th November 2021 8:13:31 am
+ * Last Modified: Sunday, 28th November 2021 12:19:43 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -18,16 +18,19 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
-import { provideMockStore } from '@ngrx/store/testing';
-import { provideMockActions } from '@ngrx/effects/testing';
-import { ReplaySubject } from 'rxjs';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { Router } from '@angular/router';
+import { authActions } from '@life-store/auth/auth.actions';
+import { TestScheduler } from 'rxjs/testing';
 
 describe('LoginPage', () => {
   let component: LoginPage;
   let service: AuthService;
   let fixture: ComponentFixture<LoginPage>;
   let angularFireAuth: AngularFireAuth;
-  let actions: ReplaySubject<any>;
+  let router: Router;
+  let store: MockStore;
+  let testScheduler: TestScheduler;
 
   const mockAngularFireAuth: any = {};
 
@@ -46,7 +49,6 @@ describe('LoginPage', () => {
       providers: [
         LoginPage,
         provideMockStore({}),
-        provideMockActions(() => actions),
         { provide: AngularFireAuth, useValue: mockAngularFireAuth },
       ],
     }).compileComponents();
@@ -55,10 +57,34 @@ describe('LoginPage', () => {
     component = fixture.componentInstance;
     service = TestBed.inject(AuthService);
     angularFireAuth = TestBed.inject(AngularFireAuth);
+    router = TestBed.inject(Router);
+    store = TestBed.inject(MockStore);
     fixture.detectChanges();
+  });
+
+  beforeEach(() => {
+    testScheduler = new TestScheduler((actual, expected) => {
+      expect(actual).toEqual(expected);
+    });
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should do login', () => {
+    jest.spyOn(store, 'dispatch').mockImplementation();
+    component.loginForm.setValue({
+      email: 'test@my-custom-life.com',
+      password: '11223344'
+    });
+    component.doLogin();
+    expect(store.dispatch).toHaveBeenCalledWith(
+      authActions.signInWithEmailAndPassword({
+        email: 'test@my-custom-life.com',
+        password: '11223344',
+      })
+    );
+  });
+
 });
