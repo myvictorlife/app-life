@@ -2,7 +2,7 @@
  * File: loading.component.ts
  * Project: LIFE
  * Created: Tuesday, 30th November 2021 5:57:49 pm
- * Last Modified: Tuesday, 30th November 2021 7:45:50 pm
+ * Last Modified: Tuesday, 30th November 2021 8:00:11 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -48,7 +48,7 @@ export class LoadingComponent implements OnInit, OnDestroy {
   }
 
   async hideLoading() {
-    await this.loading.dismiss().then(() => console.log('dismissed'));
+    await this.loading?.dismiss().then(() => console.log('dismissed'));
   }
 
   ngOnDestroy() {

@@ -2,7 +2,7 @@
  * File: health.effects.spec.ts
  * Project: LIFE
  * Created: Sunday, 28th November 2021 9:05:01 pm
- * Last Modified: Tuesday, 30th November 2021 7:10:52 pm
+ * Last Modified: Tuesday, 30th November 2021 7:51:19 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -71,7 +71,7 @@ describe('HealthEffects', () => {
         jest.spyOn(healthService, 'getInfo')
             .mockImplementation(() => (response));
 
-        const expected = cold('--(b|)', { b: outcome });
+        const expected = cold('--b', { b: outcome });
         expect(healthEffects.healthInfo$).toBeObservable(expected);
     });
 

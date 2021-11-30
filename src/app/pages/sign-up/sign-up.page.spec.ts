@@ -2,7 +2,7 @@
  * File: sign-up.page.spec.ts
  * Project: LIFE
  * Created: Sunday, 21st November 2021 12:25:43 pm
- * Last Modified: Saturday, 27th November 2021 3:03:13 pm
+ * Last Modified: Tuesday, 30th November 2021 7:54:35 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -22,7 +22,12 @@ describe('SignUpPage', () => {
   let component: SignUpPage;
   let fixture: ComponentFixture<SignUpPage>;
   let store: MockStore;
-  const initialState = {};
+  const initialState = {
+    loading: {
+      active: 0,
+      actionsInProgress: []
+    }
+  };
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
