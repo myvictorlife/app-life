@@ -2,7 +2,7 @@
  * File: health.effects.spec.ts
  * Project: LIFE
  * Created: Sunday, 28th November 2021 9:05:01 pm
- * Last Modified: Monday, 29th November 2021 11:29:12 pm
+ * Last Modified: Tuesday, 30th November 2021 7:10:52 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -40,13 +40,13 @@ describe('HealthEffects', () => {
     it('should be created', () => {
         expect(healthEffects).toBeTruthy();
     });
-    
+
     it('should return an Health Info, on success', () => {
         // set up the initial action that triggers the effect
         const healthInfo = { appName: 'Teste', version: '0.0.1' } as Health;
         const healthActionGetInfo = healthActions.getInfo();
         const outcome = healthActions.getInfoSuccess({ health: healthInfo });
-        
+
         // set up our action list
         actions$ = hot('-a', { a: healthActionGetInfo });
 
@@ -63,7 +63,7 @@ describe('HealthEffects', () => {
         const healthInfo = {};
         const healthActionGetInfo = healthActions.getInfo();
         const outcome = healthActions.getInfoFailed();
-        
+
         // set up our action list
         actions$ = hot('-a', { a: healthActionGetInfo });
 

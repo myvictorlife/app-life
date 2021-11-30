@@ -2,7 +2,7 @@
  * File: user.actions.ts
  * Project: LIFE
  * Created: Tuesday, 16th November 2021 11:12:43 pm
- * Last Modified: Tuesday, 23rd November 2021 9:52:20 pm
+ * Last Modified: Tuesday, 30th November 2021 7:34:33 am
  * Copyright © 2021 My Custom Life
  */
 
@@ -20,5 +20,5 @@ export const userActions = {
 
   createUser: createAction('[USER] Create New User', props<{ user: User }>()),
   userCreatedSucessfully: createAction('[USER] User Created Sucessfully', props<{ user: User }>()),
-  userNotCreated: createAction('[USER] Error trying to create User'),
+  userCreatedFailed: createAction('[USER] Error trying to create User'),
 };

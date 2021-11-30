@@ -2,7 +2,7 @@
  * File: health.effects.ts
  * Project: LIFE
  * Created: Saturday, 20th November 2021 9:16:27 am
- * Last Modified: Monday, 29th November 2021 11:19:44 pm
+ * Last Modified: Tuesday, 30th November 2021 7:37:01 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -16,12 +16,14 @@ import { of } from 'rxjs';
 @Injectable()
 export class HealthEffects {
   healthInfo$ = createEffect(() => (
+    /* eslint-disable-next-line */
     this.actions$.pipe(
       ofType(healthActions.getInfo),
-      exhaustMap(() => this.healthService.getInfo()),
-      map((health) => healthActions.getInfoSuccess({ health })),
-      catchError(() => of(healthActions.getInfoFailed()))
-    )),
+      exhaustMap(() => this.healthService.getInfo().pipe(
+        map((health) => healthActions.getInfoSuccess({ health })),
+        catchError(() => of(healthActions.getInfoFailed()))
+      ))
+    ))
   );
 
   constructor(private actions$: Actions, private healthService: HealthService) {}

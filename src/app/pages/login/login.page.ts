@@ -2,14 +2,16 @@
  * File: login.page.ts
  * Project: LIFE
  * Created: Saturday, 20th November 2021 11:43:54 pm
- * Last Modified: Sunday, 28th November 2021 12:11:18 pm
+ * Last Modified: Tuesday, 30th November 2021 7:45:29 pm
  * Copyright © 2021 My Custom Life
  */
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { authActions } from '@life-store/auth/auth.actions';
+import { selectIsLoadingSpinnerActive } from '@life-store/ui-components/loading/selectors/loading.selectors';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'life-login',
@@ -18,7 +20,7 @@ import { Store } from '@ngrx/store';
 })
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
-
+  isLoadingActive$: Observable<any>;
   validationMessages = {
     email: [
       { type: 'required', message: 'Email is required.' },
@@ -33,6 +35,7 @@ export class LoginPage implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit() {
+    this.isLoadingActive$ = this.store.select(selectIsLoadingSpinnerActive);
     this.loginForm = new FormGroup({
       email: new FormControl(
         '',
