@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content>
+  <life-loading *ngIf="(isLoadingActive$ | async)"></life-loading>
   <h2 class="auth-title">LIFE</h2>
   <form [formGroup]="signupForm" (ngSubmit)="doSignup()">
     <ion-list class="inputs-list" lines="full">
@@ -95,9 +96,9 @@
       </ion-button>
     </ion-row>
   </form>
-
+  <br/><br/>
   <div *ngIf="!!(user$ | async )">
-    New User Created: {{ (user$ | async ) | json }}
+    Thanks for registering, please login. 
     <ion-button class="login-btn" fill="clear" [routerLink]="['/login']">
       Back
     </ion-button>

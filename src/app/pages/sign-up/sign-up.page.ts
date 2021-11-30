@@ -2,7 +2,7 @@
  * File: sign-up.page.ts
  * Project: LIFE
  * Created: Sunday, 21st November 2021 12:25:43 pm
- * Last Modified: Saturday, 27th November 2021 3:01:08 pm
+ * Last Modified: Tuesday, 30th November 2021 7:45:38 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -15,6 +15,7 @@ import { User } from '@life-store/models/user.model';
 import { Observable } from 'rxjs';
 import { selectUser } from '@life-store/user/user.selectors';
 import { Router } from '@angular/router';
+import { selectIsLoadingSpinnerActive } from '@life-store/ui-components/loading/selectors/loading.selectors';
 @Component({
   selector: 'life-sign-up',
   templateUrl: './sign-up.page.html',
@@ -24,7 +25,7 @@ export class SignUpPage implements OnInit {
   signupForm: FormGroup;
   matchingPasswordsGroup: FormGroup;
   user$: Observable<User>;
-
+  isLoadingActive$: Observable<any>;
   hasVerifiedEmail = true;
   sentTimestamp;
 
@@ -45,6 +46,7 @@ export class SignUpPage implements OnInit {
   constructor(private store: Store, private router: Router) {}
 
   ngOnInit() {
+    this.isLoadingActive$ = this.store.select(selectIsLoadingSpinnerActive);
     this.user$ = this.store.select(selectUser);
     this.matchingPasswordsGroup = new FormGroup(
       {

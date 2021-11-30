@@ -2,14 +2,16 @@
  * File: auth.reducers.ts
  * Project: LIFE
  * Created: Friday, 26th November 2021 8:32:10 pm
- * Last Modified: Sunday, 28th November 2021 12:22:30 pm
+ * Last Modified: Tuesday, 30th November 2021 7:10:11 pm
  * Copyright © 2021 My Custom Life
  */
 
-export const feature = 'auth';
+
 import * as auth from '@angular/fire/auth';
 import { createReducer, on } from '@ngrx/store';
 import { authActions } from './auth.actions';
+
+export const feature = 'auth';
 
 export interface State {
   credential: auth.UserCredential | null;
