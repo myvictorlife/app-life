@@ -18,16 +18,6 @@ Building Knowledge
 
 - ✨Magic ✨
 
-## Coverage report 
-
-
-| <div title="Status of coverage: 🟢 - ok, 🟡 - slightly more than threshold, 🔴 - under the threshold">St.<sup>:grey_question:</sup></div> | Category   | Percentage | Covered / Total |
-| :---------------------------------------------------------------------------------------------------------------------------------------: | :--------- | :--------- | :-------------: |
-|                                                                     🟢                                                                    | Statements | 90.22%     |     166/184     |
-|                                                                     🟢                                                                    | Branches   | 82.35%     |      14/17      |
-|                                                                     🟢                                                                    | Functions  | 89.47%     |      34/38      |
-|                                                                     🟢                                                                    | Lines      | 90.24%     |     148/164     |
-
 
 ![NGRX](https://res.cloudinary.com/doiz6iue3/image/upload/c_scale,w_535/v1637186018/ngrx_iv92ri.png)
 
