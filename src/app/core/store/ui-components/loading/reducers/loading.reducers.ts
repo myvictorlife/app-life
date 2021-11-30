@@ -2,7 +2,7 @@
  * File: loading.reducerrs.ts
  * Project: LIFE
  * Created: Tuesday, 30th November 2021 4:02:51 pm
- * Last Modified: Tuesday, 30th November 2021 7:38:38 pm
+ * Last Modified: Tuesday, 30th November 2021 8:15:34 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -50,7 +50,7 @@ export const reducer = createReducer(
         loadingActions.hideLoading,
         (state: State, { payload }): State => {
 
-            let newActionsInProgress = state?.actionsInProgress ?? [];
+            let newActionsInProgress = state.actionsInProgress ?? [];
             for (const actionName of payload.actions ) {
                 // We remove trigger action from actionsInProgress array
                 newActionsInProgress = newActionsInProgress.filter(
