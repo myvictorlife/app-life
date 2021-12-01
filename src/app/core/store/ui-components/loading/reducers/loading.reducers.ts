@@ -2,7 +2,7 @@
  * File: loading.reducerrs.ts
  * Project: LIFE
  * Created: Tuesday, 30th November 2021 4:02:51 pm
- * Last Modified: Tuesday, 30th November 2021 8:15:34 pm
+ * Last Modified: Wednesday, 1st December 2021 8:02:39 am
  * Copyright © 2021 My Custom Life
  */
 
@@ -25,7 +25,8 @@ export const reducer = createReducer(
     on(
         loadingActions.showLoading,
         (state: State, { payload }): State => {
-            const isActionAlreadyInProgress = state.actionsInProgress.filter(
+            const actionsInProgress = state.actionsInProgress ?? [];
+            const isActionAlreadyInProgress = actionsInProgress.filter(
                 (currentAction: any) => currentAction === payload.type).length;
 
             // If the action in already in progress and is registered
@@ -36,9 +37,10 @@ export const reducer = createReducer(
 
             // Adding the action type in our actionsInProgress array
             const newActionsInProgress = [
-                ...state.actionsInProgress,
+                ...actionsInProgress,
                 payload.type
             ];
+
             return {
                 ...state,
                 actionsInProgress: newActionsInProgress,
