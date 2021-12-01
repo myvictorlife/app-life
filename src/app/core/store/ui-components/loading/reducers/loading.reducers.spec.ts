@@ -2,7 +2,7 @@
  * File: loading.reducers.spec.ts
  * Project: LIFE
  * Created: Tuesday, 30th November 2021 8:04:51 pm
- * Last Modified: Wednesday, 1st December 2021 8:05:12 am
+ * Last Modified: Wednesday, 1st December 2021 8:05:57 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -58,7 +58,7 @@ describe('LoadingReducer', () => {
                 }
             });
             const state = fromLoadingReducer.reducer(initialState, action);
-            expect(state).toEqual({ active: 0, actionsInProgress: [] });
+            expect(state).toEqual({ active: 1, actionsInProgress: ['[TEST] Test Action'] });
         });
     });
 
