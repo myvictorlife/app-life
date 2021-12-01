@@ -2,7 +2,7 @@
  * File: auth.actions.spec.ts
  * Project: LIFE
  * Created: Wednesday, 1st December 2021 7:32:33 pm
- * Last Modified: Wednesday, 1st December 2021 7:44:38 pm
+ * Last Modified: Wednesday, 1st December 2021 9:19:02 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -21,9 +21,6 @@ describe('AuthActions', () => {
     });
 
     it('should sign in with email and password success', () => {
-        const email = 'test@my-custom-life.com';
-        const  password = '112233';
- 
          const action = authActions
             .signInWithEmailAndPasswordSuccess({
                  user: {} as any

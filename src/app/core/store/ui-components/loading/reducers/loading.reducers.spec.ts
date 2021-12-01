@@ -2,7 +2,7 @@
  * File: loading.reducers.spec.ts
  * Project: LIFE
  * Created: Tuesday, 30th November 2021 8:04:51 pm
- * Last Modified: Wednesday, 1st December 2021 8:05:57 pm
+ * Last Modified: Wednesday, 1st December 2021 9:20:04 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -10,7 +10,6 @@ import { loadingActions } from '../actions/loading.actions';
 import * as fromLoadingReducer from './loading.reducers';
 
 describe('LoadingReducer', () => {
-    
     describe('showLoading', () => {
         it('should loading be active - v1', () => {
             const { initialState } = fromLoadingReducer;
@@ -73,7 +72,7 @@ describe('LoadingReducer', () => {
             const state = fromLoadingReducer.reducer(initialState, action);
             expect(state).toEqual({ active: 0, actionsInProgress: [] });
         });
-        
+
         it('should return the same state for hideLoading', () => {
             const initialState = {
                 active: 1,
@@ -87,7 +86,7 @@ describe('LoadingReducer', () => {
             const state = fromLoadingReducer.reducer(initialState, action);
             expect(state).toEqual({ active: 1, actionsInProgress: ['[TEST] Test Action 2'] });
         });
-    
+
         it('should return the same state for hideLoading empty actions', () => {
             const initialState = { active: 0, actionsInProgress: undefined };
             const action = loadingActions.hideLoading({
@@ -98,7 +97,6 @@ describe('LoadingReducer', () => {
             const state = fromLoadingReducer.reducer(initialState, action);
             expect(state).toEqual({ active: 0, actionsInProgress: [] });
         });
-    
         it('should return the same state for hideLoading empty actions - null', () => {
             const initialState = { active: 0, actionsInProgress: null };
             const action = loadingActions.hideLoading({

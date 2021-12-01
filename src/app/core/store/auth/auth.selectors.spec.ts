@@ -2,7 +2,7 @@
  * File: auth.selectors.spec.ts
  * Project: LIFE
  * Created: Wednesday, 1st December 2021 8:08:09 pm
- * Last Modified: Wednesday, 1st December 2021 8:32:14 pm
+ * Last Modified: Wednesday, 1st December 2021 9:19:39 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -37,11 +37,11 @@ describe('AuthSelectors', () => {
 
     it('should select the default state', () => {
         expect(fromAuthSelectors.selectAuthState.projector(initialState))
-        .toEqual(initialState)
+        .toEqual(initialState);
     });
 
     it('should select auth', () => {
         expect(fromAuthSelectors.selectAuth.projector(initialState))
-        .toEqual(initialState.credential)
+        .toEqual(initialState.credential);
     });
 });
