@@ -2,7 +2,7 @@
  * File: app.component.ts
  * Project: LIFE
  * Created: Monday, 8th November 2021 7:38:42 pm
- * Last Modified: Saturday, 27th November 2021 2:49:26 pm
+ * Last Modified: Wednesday, 1st December 2021 11:33:47 pm
  * Copyright © 2021 My Custom Life
  */
 
@@ -16,6 +16,7 @@ import { initializeApp } from 'firebase/app';
 import { indexedDBLocalPersistence, initializeAuth } from 'firebase/auth';
 import { environment } from 'environments/environment';
 import { getFirestore, Firestore } from 'firebase/firestore';
+import {SplashScreen} from '@capacitor/splash-screen';
 
 @Component({
   selector: 'life-root',
@@ -31,8 +32,15 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.hideSplashScreeen();
     this.listenChangeLanguage();
     this.fixFirebaseAuthSDK9DoesNotWorkOnIOS();
+  }
+
+  private hideSplashScreeen(): void {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000);
   }
 
   listenChangeLanguage() {

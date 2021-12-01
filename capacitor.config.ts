@@ -8,6 +8,12 @@ const config: CapacitorConfig = {
   ios: {
     cordovaLinkerFlags: ['-ObjC'],
   },
+  plugins: {
+    SplashScreen: {
+      launchAutoHide: false,
+      showSpinner: true
+    }
+  }
 };
 
 export default config;
