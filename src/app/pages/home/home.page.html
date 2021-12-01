@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Home</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Welcome,</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,8 +14,16 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-button class="forgot-btn" fill="clear" [routerLink]="['/profile']">
-    Go To Profile
-  </ion-button>
-
+  <ion-item>
+    <ion-label>Likes</ion-label>
+    <ion-badge slot="end">99k</ion-badge>
+  </ion-item>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button class="forgot-btn" fill="clear" [routerLink]="['/profile']">
+      Go To Profile
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
