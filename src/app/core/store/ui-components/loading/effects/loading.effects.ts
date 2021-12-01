@@ -2,7 +2,7 @@
  * File: loading.effects.ts
  * Project: LIFE
  * Created: Tuesday, 30th November 2021 4:11:02 pm
- * Last Modified: Tuesday, 30th November 2021 7:39:33 pm
+ * Last Modified: Wednesday, 1st December 2021 7:23:06 am
  * Copyright © 2021 My Custom Life
  */
 
@@ -45,7 +45,7 @@ export class LoadingEffects {
                 authActions.signInWithEmailAndPasswordSuccess,
                 authActions.signInWithEmailAndPasswordFailed
             ),
-            map((action) => {
+            map(() => {
                 const actions = this.listOfActions;
                 this.listOfActions = [];
                 return loadingActions.hideLoading({
