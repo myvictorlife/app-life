@@ -2,7 +2,7 @@
  * File: app.component.ts
  * Project: LIFE
  * Created: Monday, 8th November 2021 7:38:42 pm
- * Last Modified: Wednesday, 1st December 2021 11:33:47 pm
+ * Last Modified: Thursday, 2nd December 2021 12:03:02 am
  * Copyright © 2021 My Custom Life
  */
 
@@ -37,12 +37,6 @@ export class AppComponent implements OnInit {
     this.fixFirebaseAuthSDK9DoesNotWorkOnIOS();
   }
 
-  private hideSplashScreeen(): void {
-    setTimeout(() => {
-      SplashScreen.hide();
-    }, 2000);
-  }
-
   listenChangeLanguage() {
     this.language$ = this.store.select(fromUserSelectors.selectLanguage);
     this.language$.subscribe((language) => {
@@ -53,6 +47,13 @@ export class AppComponent implements OnInit {
   setLanguage(language: string) {
     this.translate.setDefaultLang(language);
   }
+
+  private hideSplashScreeen(): void {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000);
+  }
+
   private fixFirebaseAuthSDK9DoesNotWorkOnIOS() {
     // https://github.com/firebase/firebase-js-sdk/issues/5552
     const app = initializeApp(environment.firebaseConfig);
