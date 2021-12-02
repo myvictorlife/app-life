@@ -2,7 +2,7 @@
  * File: loading.component.ts
  * Project: LIFE
  * Created: Tuesday, 30th November 2021 5:57:49 pm
- * Last Modified: Tuesday, 30th November 2021 8:51:14 pm
+ * Last Modified: Thursday, 2nd December 2021 8:24:43 am
  * Copyright © 2021 My Custom Life
  */
 
@@ -25,14 +25,13 @@ export class LoadingComponent implements OnInit, OnDestroy {
   constructor(
     public loadingController: LoadingController,
     private store: Store
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.listenerLoading$ = this.store.select(selectIsLoadingSpinnerActive);
-    this.listenerLoading$.subscribe((result) => {
+    this.listenerLoading$.subscribe(async (result) => {
       if (result) {
-        this.showLoading();
+        await this.showLoading();
       } else {
         this.hideLoading();
       }
@@ -44,7 +43,7 @@ export class LoadingComponent implements OnInit, OnDestroy {
       cssClass: 'my-custom-class',
       message: 'Please wait...'
     });
-    return this.loading.present();
+    return await this.loading.present();
   }
 
   async hideLoading() {
