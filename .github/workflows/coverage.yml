@@ -1,6 +1,8 @@
 name: Running Test Coverage
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   build:
