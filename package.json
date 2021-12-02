@@ -21,7 +21,7 @@
     "lint:fix": "ng lint -- --fix",
     "e2e": "ng e2e",
     "pretty-quick": "npx pretty-quick --staged",
-    "precommit": "npm run pretty-quick && npm run lint && npm run test:ci",
+    "precommit": "npm run pretty-quick && ng lint && npm run test:ci",
     "prepare": "husky install",
     "generate::android:splash:icons": "cordova-res android --skip-config --copy",
     "generate::ios:splash:icons": "cordova-res ios --skip-config --copy"
